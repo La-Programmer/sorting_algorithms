@@ -12,23 +12,26 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t mov_ind = 0, i, smallest_ind = 0;
-	int smallest;
+	int smallest, swap;
 
 	while (mov_ind < size - 1)
 	{
+		swap = 0;
 		smallest = array[mov_ind];
 		for (i = mov_ind; i < size; i++)
 		{
 			if (array[i] < smallest)
 			{
+
 				smallest = array[i];
 				smallest_ind = i;
+				swap = 1;
 			}
 		}
-		printf("Smallest: %d\n", smallest);
 		array[smallest_ind] = array[mov_ind];
 		array[mov_ind] = smallest;
-		print_array(array, size);
+		if (swap)
+			print_array(array, size);
 		mov_ind++;
 	}
 }
