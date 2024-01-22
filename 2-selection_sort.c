@@ -28,10 +28,12 @@ void selection_sort(int *array, size_t size)
 				swap = 1;
 			}
 		}
-		array[smallest_ind] = array[mov_ind];
-		array[mov_ind] = smallest;
 		if (swap)
+		{
+			array[smallest_ind] = array[mov_ind];
+			array[mov_ind] = smallest;
 			print_array(array, size);
+		}
 		mov_ind++;
 	}
 }
