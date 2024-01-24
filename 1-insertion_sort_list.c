@@ -48,12 +48,11 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current;
 
-	if ((*list)->next == NULL)
+	if (((*list)->next || (*list)->next) == NULL)
 		return;
 
 	current = *list;
-	do
-	{
+	do {
 		if (current->n > current->next->n)
 		{
 			swap(list, current, current->next);
